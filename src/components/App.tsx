@@ -157,7 +157,7 @@ class App extends Component<Props> {
             >
               <Button
                 onClick={() => store.setRoute(Route.Receive)}
-                style={{ flex: "1 1 0", marginRight: "1rem" }}
+                style={{ flex: "1 1 0" }}
                 size="lg"
               >
                 {t("receive")} {downArrow()}
