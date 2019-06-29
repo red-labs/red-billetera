@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Send from "./Send";
+
 import Receive from "./Receive";
 import Save from "./Save";
 import Transactions from "./Transactions";
@@ -162,13 +162,7 @@ class App extends Component<Props> {
               >
                 {t("receive")} {downArrow()}
               </Button>
-              <Button
-                onClick={() => store.setRoute(Route.Send)}
-                style={{ flex: "1 1 0" }}
-                size="lg"
-              >
-                {t("send")} {rightArrow()}
-              </Button>
+
             </div>
           </div>
 
@@ -196,11 +190,7 @@ class App extends Component<Props> {
             </Button> */}
           </div>
         </div>
-        <Send
-          toggle={() => store.setRoute(Route.Main)}
-          open={store.state.route === Route.Send}
-          currency={i18n.language === "es" ? Currency.COP : Currency.XDAI}
-        />
+
         <Receive
           toggle={() => store.setRoute(Route.Main)}
           open={store.state.route === Route.Receive}

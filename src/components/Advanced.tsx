@@ -7,7 +7,6 @@ import xdaiImg from "../images/xdai.jpg";
 import ethImg from "../images/ethereum.png";
 
 import { Currency } from "../types";
-import Send from "./Send";
 import Convert from "./Convert";
 import { withI18n } from "react-i18next";
 import { Screen, ScreenHeader, ScreenBody } from "./Screen";
@@ -251,18 +250,7 @@ class Advanced extends Component<Props, State> {
             convertTo={this.state.convertModal.convertTo}
           />
         )}
-        <Send
-          toggle={() =>
-            this.setState({
-              sendModal: {
-                ...this.state.sendModal,
-                open: false
-              }
-            })
-          }
-          open={this.state.sendModal.open}
-          currency={Currency.XDAI}
-        />
+
       </Screen>
     );
   }
