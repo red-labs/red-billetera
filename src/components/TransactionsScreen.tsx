@@ -65,15 +65,7 @@ class Transactions extends Component<Props, State> {
               </ListGroup>
             </ScreenBody>
             <div
-              style={{
-                position: "fixed",
-                bottom: 10,
-                left: 10,
-                right: 10,
-                display: "flex",
-                justifyContent: "center",
-                textAlign: "center"
-              }}
+              
             >
               <Alert
                 style={{ width: 450 }}

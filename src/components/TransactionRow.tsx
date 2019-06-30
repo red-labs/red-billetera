@@ -24,16 +24,15 @@ function TransactionRow(props: Props) {
       style={{
         padding: "0.5rem 0",
         display: "flex",
-        justifyContent: "space-between"
+        justifyContent: "space-between",
+        backgroundColor: "#F3F4FA"
       }}
       onClick={() => props.onClick()}
     >
       <small>
         {tx.to.toLowerCase() === address.toLowerCase() ? (
           <>
-            {t("received", {
-              amount: "$" + formatToDollars(tx.value) + " "
-            })}
+
             {i18n.language === "es" && rate
               ? " ($" + convertToCOP(tx.value, rate) + " COP)"
               : ""}
@@ -43,9 +42,7 @@ function TransactionRow(props: Props) {
           </>
         ) : (
           <>
-            {t("sent", {
-              amount: "$" + formatToDollars(tx.value) + " "
-            })}
+            
             {i18n.language === "es" && rate
               ? " ($" + convertToCOP(tx.value, rate) + " COP)"
               : ""}

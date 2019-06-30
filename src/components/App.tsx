@@ -4,7 +4,7 @@ import Receive from "./Receive";
 import Save from "./Save";
 import Transactions from "./Transactions";
 import TransactionsScreen from "./TransactionsScreen";
-import { downArrow, rightArrow } from "../utils/icons";
+import { downArrow, rightArrow, whatsAppIcon } from "../utils/icons";
 import {
   Button,
   ButtonDropdown,
@@ -60,10 +60,6 @@ class App extends Component<Props> {
               </h2>
               {" pesos"}
             </div>
-            <div style={{ textAlign: "right" }}>
-              {"$" + formatToDollars(subtractTxnCost(xDaiBalance))}
-              <small> xDAI</small>
-            </div>
           </div>
         );
       } else {
@@ -88,8 +84,7 @@ class App extends Component<Props> {
             flex: 1,
             flexDirection: "column",
             justifyContent: "space-between",
-            paddingLeft: "1rem",
-            paddingRight: "1rem",
+            padding: "1em",
             maxWidth: 450,
             height: "100%",
             maxHeight: 900,
@@ -104,7 +99,8 @@ class App extends Component<Props> {
               alignItems: "center"
             }}
           >
-            <h1 style={{ fontWeight: "normal" }}>{t("Billetera")}</h1>
+
+            <h1 className="branding">Billetera</h1>
             <div>
               <ButtonDropdown
                 isOpen={this.state.languageDropdownOpen}
@@ -133,7 +129,7 @@ class App extends Component<Props> {
           </div>
 
           <div>
-            <div
+            <div className="account-card"
               style={{
                 display: "flex",
                 justifyContent: "space-between",
@@ -155,30 +151,38 @@ class App extends Component<Props> {
                 justifyContent: "center"
               }}
             >
-              <Button
+              <Button className="receive-button"
                 onClick={() => store.setRoute(Route.Receive)}
                 style={{ flex: "1 1 0" }}
                 size="lg"
               >
-                {t("receive")} {downArrow()}
+                {downArrow()}
               </Button>
 
             </div>
           </div>
-
-          <Transactions
-            viewTransactions={() => store.setRoute(Route.Transactions)}
-          />
+         <div className="transactions-card">
+            <div className="transaction-items">
+                <Transactions
+                  viewTransactions={() => store.setRoute(Route.Transactions)}
+                />
+             </div>
 
           <div>
-            <Button
-              style={{ marginBottom: "1rem" }}
+            {/*<Button
+               className="recover"
               onClick={() => store.setRoute(Route.Save)}
               size="lg"
               block
             >
               {t("saveRestore")}
-            </Button>
+            </Button>*/}
+               <Button
+               size="lg"
+               block
+               className="whatsapp-button" href="https://www.whatsapp.com/business/"
+               >
+               Contacto en  {whatsAppIcon()} </Button>
 
             {/* <div style={{ height: 75 }} /> */}
             {/* <Button
@@ -189,6 +193,7 @@ class App extends Component<Props> {
               {t("advanced")}
             </Button> */}
           </div>
+        </div>
         </div>
 
         <Receive
