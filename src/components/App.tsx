@@ -2,6 +2,7 @@ import React, { Component } from "react";
 
 import Receive from "./Receive";
 import Save from "./Save";
+import Recover from "./Recover";
 import Transactions from "./Transactions";
 import TransactionsScreen from "./TransactionsScreen";
 import { downArrow, rightArrow, whatsAppIcon } from "../utils/icons";
@@ -169,14 +170,22 @@ class App extends Component<Props> {
              </div>
 
           <div>
-            {/*<Button
-               className="recover"
+            <Button
+               className="save"
               onClick={() => store.setRoute(Route.Save)}
               size="lg"
               block
             >
               {t("saveRestore")}
-            </Button>*/}
+            </Button>
+            <Button
+               className="save"
+              onClick={() => store.setRoute(Route.Recover)}
+              size="lg"
+              block
+            >
+              {t("Recover")}
+            </Button>
                <Button
                size="lg"
                block
@@ -204,6 +213,10 @@ class App extends Component<Props> {
           toggle={() => store.setRoute(Route.Main)}
           open={store.state.route === Route.Save}
         />
+        <Recover
+        toggle={() => store.setRoute(Route.Main)}
+        open={store.state.route === Route.Recover}
+      />
         <TransactionsScreen
           toggle={() => store.setRoute(Route.Main)}
           open={store.state.route === Route.Transactions}
