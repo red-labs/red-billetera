@@ -2,6 +2,7 @@ import React, { Component } from "react";
 
 import Receive from "./Receive";
 import Save from "./Save";
+import Send from "./Send";
 import Recover from "./Recover";
 import Transactions from "./Transactions";
 import TransactionsScreen from "./TransactionsScreen";
@@ -115,6 +116,9 @@ class App extends Component<Props> {
                     onClick={() => store.setRoute(Route.Recover)}>
                     Recuperar
                   </DropdownItem>
+                  <DropdownItem onClick={() => store.setRoute(Route.Send)}>
+                    Enviar
+                  </DropdownItem>
                 </DropdownMenu>
               </Dropdown>
             </div>
@@ -198,7 +202,11 @@ class App extends Component<Props> {
         </div>
         </div>
 
-
+        <Send
+                  toggle={() => store.setRoute(Route.Main)}
+                  open={store.state.route === Route.Send}
+                  currency={i18n.language === "es" ? Currency.COP : Currency.XDAI}
+                />
         <Receive
           toggle={() => store.setRoute(Route.Main)}
           open={store.state.route === Route.Receive}
