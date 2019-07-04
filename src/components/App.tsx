@@ -8,7 +8,7 @@ import TransactionsScreen from "./TransactionsScreen";
 import { downArrow, rightArrow, whatsAppIcon } from "../utils/icons";
 import {
   Button,
-  ButtonDropdown,
+  Dropdown,
   DropdownToggle,
   DropdownItem,
   DropdownMenu
@@ -85,7 +85,6 @@ class App extends Component<Props> {
             flex: 1,
             flexDirection: "column",
             justifyContent: "space-between",
-            padding: "1em",
             maxWidth: 450,
             height: "100%",
             maxHeight: 900,
@@ -93,17 +92,13 @@ class App extends Component<Props> {
             overflow: "hidden"
           }}
         >
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "space-between",
-              alignItems: "center"
-            }}
+          <div className="branding-container"
+
           >
 
             <h1 className="branding">Billetera</h1>
-            <div>
-              <ButtonDropdown
+            <div className="drop">
+              <Dropdown
                 isOpen={this.state.languageDropdownOpen}
                 toggle={() =>
                   this.setState({
@@ -111,25 +106,21 @@ class App extends Component<Props> {
                   })
                 }
               >
-                <DropdownToggle caret>{t("language")}</DropdownToggle>
+                <DropdownToggle >{t("⋮")}</DropdownToggle>
                 <DropdownMenu className="dropdown-menu-right">
-                  <DropdownItem onClick={() => i18n.changeLanguage("en")}>
-                    English
+                  <DropdownItem onClick={() => store.setRoute(Route.Save)}>
+                    Save
                   </DropdownItem>
                   <DropdownItem
-                    onClick={() => {
-                      this.props.store.startUsdCopRatePoll();
-                      i18n.changeLanguage("es");
-                    }}
-                  >
-                    Español
+                    onClick={() => store.setRoute(Route.Recover)}>
+                    recover
                   </DropdownItem>
                 </DropdownMenu>
-              </ButtonDropdown>
+              </Dropdown>
             </div>
           </div>
-
-          <div>
+<div className="top-container">
+          <div >
             <div className="account-card"
               style={{
                 display: "flex",
@@ -157,12 +148,13 @@ class App extends Component<Props> {
                 style={{ flex: "1 1 0" }}
                 size="lg"
               >
-                {downArrow()}
+                depositar {downArrow()}
               </Button>
 
             </div>
           </div>
-         <div className="transactions-card">
+          </div>
+         <div className="content-container">
             <div className="transaction-items">
                 <Transactions
                   viewTransactions={() => store.setRoute(Route.Transactions)}
@@ -170,7 +162,8 @@ class App extends Component<Props> {
              </div>
 
           <div>
-            <Button
+          {/* the below navigation was moved to the menu at the top */}
+            {/*<Button
                className="save"
               onClick={() => store.setRoute(Route.Save)}
               size="lg"
@@ -185,7 +178,7 @@ class App extends Component<Props> {
               block
             >
               {t("Recover")}
-            </Button>
+            </Button>*/}
                <Button
                size="lg"
                block
@@ -204,6 +197,7 @@ class App extends Component<Props> {
           </div>
         </div>
         </div>
+
 
         <Receive
           toggle={() => store.setRoute(Route.Main)}

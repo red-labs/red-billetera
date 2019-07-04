@@ -51,7 +51,7 @@ class Transactions extends Component<Props> {
                     "linear-gradient(to bottom, rgb(243,244,250, 0) 0%,rgba(243,244,250,.7) 40%,rgba(243,244,250,1) 55%)"
                 }}
               >
-                <Button onClick={this.props.viewTransactions} color="link">
+                <Button className="transaction-button" Click={this.props.viewTransactions} >
                   {t("allTransactions")}
                 </Button>
               </div>
