@@ -37,7 +37,7 @@ class Recover extends Component<Props, State> {
         {(context: AppContainer) => (
           <Screen isOpen={this.props.open} toggle={this.props.toggle}>
             <ScreenHeader toggle={this.props.toggle}>
-              {t("saveRestore")}
+              {t("Recuperar")}
             </ScreenHeader>
             <ScreenBody>
               <p />

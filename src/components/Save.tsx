@@ -37,7 +37,7 @@ class Save extends Component<Props, State> {
         {(context: AppContainer) => (
           <Screen isOpen={this.props.open} toggle={this.props.toggle}>
             <ScreenHeader toggle={this.props.toggle}>
-              {t("saveRestore")}
+              {t("Guardar")}
             </ScreenHeader>
             <ScreenBody>
               <div style={{ marginBottom: "1rem" }}>
@@ -62,7 +62,7 @@ class Save extends Component<Props, State> {
               </Button>
 
               <p />
-            
+
 
 
 

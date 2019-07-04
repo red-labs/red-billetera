@@ -34,7 +34,7 @@ function TransactionRow(props: Props) {
           <>
 
             {i18n.language === "es" && rate
-              ? " ($" + convertToCOP(tx.value, rate) + " COP)"
+              ? "$" + convertToCOP(tx.value, rate) + ""
               : ""}
             <span style={{ whiteSpace: "nowrap" }}>
               {" " + t("from")} {addressToEmoji(tx.from)}
@@ -42,9 +42,9 @@ function TransactionRow(props: Props) {
           </>
         ) : (
           <>
-            
+
             {i18n.language === "es" && rate
-              ? " ($" + convertToCOP(tx.value, rate) + " COP)"
+              ? " $" + convertToCOP(tx.value, rate) + ""
               : ""}
             <span style={{ whiteSpace: "nowrap" }}>
               {" " + t("to")} {addressToEmoji(tx.to)}

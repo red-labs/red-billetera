@@ -97,7 +97,7 @@ class App extends Component<Props> {
           >
 
             <h1 className="branding">Billetera</h1>
-            <div className="drop">
+            <div >
               <Dropdown
                 isOpen={this.state.languageDropdownOpen}
                 toggle={() =>
@@ -109,11 +109,11 @@ class App extends Component<Props> {
                 <DropdownToggle >{t("⋮")}</DropdownToggle>
                 <DropdownMenu className="dropdown-menu-right">
                   <DropdownItem onClick={() => store.setRoute(Route.Save)}>
-                    Save
+                    Guardar
                   </DropdownItem>
                   <DropdownItem
                     onClick={() => store.setRoute(Route.Recover)}>
-                    recover
+                    Recuperar
                   </DropdownItem>
                 </DropdownMenu>
               </Dropdown>
@@ -148,7 +148,7 @@ class App extends Component<Props> {
                 style={{ flex: "1 1 0" }}
                 size="lg"
               >
-                depositar {downArrow()}
+                depositar
               </Button>
 
             </div>

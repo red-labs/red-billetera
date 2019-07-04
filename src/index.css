@@ -57,7 +57,7 @@ padding: 1.5rem 1rem;
    font-size: 1.25rem;
    line-height: 1.5;
    border-radius: 10px;
-    box-shadow: 0px 20px 40px rgba(0,0,0,0.4);
+    box-shadow: 0 0.5px 0 0 #ffffff inset, 0 1px 2px 0 #B3B3B3;
 
 }
 .transaction-items {
@@ -87,19 +87,23 @@ padding: 1.5rem 1rem;
 
 
 .btn-secondary {
+   color: white;
    background: #F23C22;
    border-color: #F23C22;
    font-family:  Helvetica ;
   font-weight: 600;
+  font-size: 1.2rem;
+
 }
 
 .btn-secondary:hover {
    background: #F23C22;
    border-color: #F23C22;
+   color: white;
 }
 
 .receive-button {
-   color: #282829;
+   color: white;
    padding: 1rem 1rem;
    font-size: 1.25rem;
    line-height: 1.5;
@@ -121,6 +125,11 @@ padding: 1.5rem 1rem;
     border-color: #5a6268;
 }
 
+.list-group-item {
+   font-family:  Helvetica;
+  font-weight: 600;
+}
+
 .transaction-button {
    color: #F23C22;
    background-color: #F3F4FA;
@@ -134,6 +143,7 @@ padding: 1.5rem 1rem;
    border-color: #F3F4FA;
    margin: 10px;
 }
+
 
 .whatsapp-button {
 color: #252525;
@@ -162,7 +172,7 @@ color: #252525;
 
 
 .recover {
- color: white;
+ color: black;
  padding: .5rem 1rem;
 font-size: 1.25rem;
 line-height: 1.5;

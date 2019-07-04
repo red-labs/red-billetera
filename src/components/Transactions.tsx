@@ -48,10 +48,10 @@ class Transactions extends Component<Props> {
                   flexDirection: "column",
                   justifyContent: "flex-end",
                   background:
-                    "linear-gradient(to bottom, rgb(243,244,250, 0) 0%,rgba(243,244,250,.7) 40%,rgba(243,244,250,1) 55%)"
+                     "linear-gradient(to bottom, rgb(243,244,250, 0) 0%,rgba(243,244,250,.7) 40%,rgba(243,244,250,1) 55%)"
                 }}
               >
-                <Button className="transaction-button" Click={this.props.viewTransactions} >
+                <Button className="transaction-button" onClick={this.props.viewTransactions} >
                   {t("allTransactions")}
                 </Button>
               </div>
