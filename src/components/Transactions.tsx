@@ -21,7 +21,7 @@ class Transactions extends Component<Props> {
             <div
               style={{
                 position: "relative",
-                height: "20vh",
+                height: "25vh",
                 overflow: "hidden"
               }}
             >

@@ -57,7 +57,7 @@ class App extends Component<Props> {
         return (
           <div>
             <div>
-              <h2 style={{ display: "inline-block", wordBreak: "normal" }}>
+              <h2 style={{ display: "inline-block", fontWeight: 600, wordBreak: "normal" }}>
                 {"$" + convertToCOP(subtractTxnCost(xDaiBalance), usdcop)}
               </h2>
               {" pesos"}
@@ -119,6 +119,14 @@ class App extends Component<Props> {
                   <DropdownItem onClick={() => store.setRoute(Route.Send)}>
                     Enviar
                   </DropdownItem>
+                  <DropdownItem
+                    onClick={() => {
+                      this.props.store.startUsdCopRatePoll();
+                      i18n.changeLanguage("es");
+                    }}
+                  >
+                    Español
+                  </DropdownItem>
                 </DropdownMenu>
               </Dropdown>
             </div>
@@ -152,7 +160,7 @@ class App extends Component<Props> {
                 style={{ flex: "1 1 0" }}
                 size="lg"
               >
-                depositar
+                Depositar
               </Button>
 
             </div>
@@ -183,13 +191,12 @@ class App extends Component<Props> {
             >
               {t("Recover")}
             </Button>*/}
-               <Button
-               size="lg"
-               block
-               className="whatsapp-button" href="https://www.whatsapp.com/business/"
-               >
-               Contacto en  {whatsAppIcon()} </Button>
-
+            <Button
+            size="lg"
+            block
+            className="whatsapp-button" href="https://wa.me/17866673227"
+            >
+            Contáctenos en {whatsAppIcon()} </Button>
             {/* <div style={{ height: 75 }} /> */}
             {/* <Button
               color="link"

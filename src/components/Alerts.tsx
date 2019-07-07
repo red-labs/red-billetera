@@ -14,7 +14,7 @@ interface Props {
 
 function RenderAlert(props: Props) {
   return (
-    <div
+    <div 
       style={{
         position: "fixed",
         bottom: 10,
@@ -25,7 +25,7 @@ function RenderAlert(props: Props) {
         textAlign: "center"
       }}
     >
-      <Alert
+      <Alert className="alert-container"
         style={{ width: 450 }}
         isOpen={props.isOpen}
         color={props.color}
